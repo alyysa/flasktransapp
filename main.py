@@ -4,7 +4,8 @@ import datetime
 import psycopg2 
 
 conn = psycopg2.connect(
-   database="postgres", user='postgres', password='postgres', host='127.0.0.1', port= '5432'
+   database="d7gpfa7i9lr84k", user='vdieznrdbkpvdv', password='9f32270e23791dd9cf109506fc3d3b2fed07ec9f6d758285a69db4693bb7ad4e', host='ec2-52-30-133-191.eu-west-1.compute.amazonaws.com
+', port= '5432'
 )
 
 app = Flask(__name__)
