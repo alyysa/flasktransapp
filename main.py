@@ -34,8 +34,10 @@ def generatePayload(data):
     obj['Deposit Amount'] = data[6]
     obj[' Balance Amount'] = data[7]
     return obj
-
-@app.route('/', defaults={'date': None})
+@app.route('/')
+def index():
+  return '<h1>I want to Deploy Flask to Heroku</h1>'
+#@app.route('/', defaults={'date': None})
 @app.route('/<date>' , methods=['GET'])
 def date(date):
     print(date)
