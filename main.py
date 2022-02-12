@@ -34,9 +34,7 @@ def generatePayload(data):
     obj['Deposit Amount'] = data[6]
     obj[' Balance Amount'] = data[7]
     return obj
-@app.route('/')
-def index():
-  return '<h1>I want to Deploy Flask to Heroku</h1>'
+
 #@app.route('/', defaults={'date': None})
 @app.route('/<date>' , methods=['GET'])
 def date(date):
@@ -74,7 +72,7 @@ def balace_details(date):
         cursor.close()
         if not data:
             return "No transactions Found"
-        payload = {"balance" : data[0][0]}
+        payload = {"balance" : data}
         return jsonify(payload)
     else:
         return "Incorrect data format, should be DD-MM-YY"
@@ -92,7 +90,7 @@ def date_details(date):
         cursor.close()
         if not data:
             return "No transactions Found"
-        payload = {"Transaction Details" : data[0][0]}
+        payload = {"Transaction Details" : data}
         return jsonify(payload)
     else:
         return "Incorrect data format, should be DD-MM-YY"
