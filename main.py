@@ -37,7 +37,7 @@ def generatePayload(data):
 
 @app.route('/')
 def index():
-  return '<h1>Available End Points</h1> <p>GET /<DD-MM-YY> = fetches all data on the date </p> <p>GET /balance/<DD-MM-YY> = fetches balance on that date </p> <p> GET /details/<DD-MM-YY> = fetches Transaction details on that date </p> <p>POST /add = add transaction details to database </p> '
+  return '<h1>Available End Points</h1> <p>GET /{DD-MM-YY} = fetches all data on the date </p> <p>GET /balance/{DD-MM-YY} = fetches balance on that date </p> <p> GET /details/{DD-MM-YY} = fetches Transaction details on that date </p> <p>POST /add = add transaction details to database </p> '
 
 #@app.route('/', defaults={'date': None})
 @app.route('/<date>' , methods=['GET'])
